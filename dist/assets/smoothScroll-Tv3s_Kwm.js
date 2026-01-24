@@ -1,0 +1,1 @@
+import{g as r,S as i}from"./index-ivrQsyuf.js";function s(){if(r.registerPlugin(i),!(typeof window<"u"&&("ontouchstart"in window||navigator.maxTouchPoints>0)||window.innerWidth<768))try{i.refresh()}catch(o){console.warn("ScrollTrigger init error:",o.message)}}export{s as default};

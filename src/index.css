@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+	--color-bg: #0f172a; /* deep slate */
+	--color-surface: #0b1220;
+	--color-text: #e6eef8;
+	--color-muted: #94a3b8;
+	--color-accent: #ffde59; /* hero accent */
+	--color-brand: #0ea5a4;
+	--hero-boost: 0;
+}
+
+/* Lando-like theme preset (lime accent, darker background) */
+.theme-lando{
+	--color-accent: #C7FF00; /* lime */
+	--color-bg: #050507;
+	--color-surface: #07080a;
+	--color-text: #f6f7f9;
+}
+
+/* Sangue theme (inspired by 'SANGUE NOBRE' cover) */
+.theme-sangue{
+	--color-accent: #b81e22; /* deep blood red */
+	--color-bg: #0b0606; /* near black with warm tone */
+	--color-surface: #14090a;
+	--color-text: #ffeeee;
+	--color-muted: #b38b8b;
+}
+
+/* Modern UI tweaks */
+body { transition: background-color .35s, color .25s; }
+.card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); }
+.section-divider { height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.06), rgba(255,255,255,0.03)); margin: 2.25rem 0 3rem; opacity: 0.9 }
+.btn-accent { background: var(--color-accent); color: #000; font-weight: 700; padding: .5rem .9rem; border-radius: 8px }
+.meta { color: var(--color-muted); font-size: .9rem }
+
+/* Hover preview indicator */
+.preview-indicator{ position: absolute; right: 10px; top: 10px; background: rgba(0,0,0,0.4); padding: 6px 8px; border-radius: 999px; font-size: 12px; color: #fff; opacity: .9 }
+
+html, body, #root { height: 100%; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: linear-gradient(180deg, var(--color-bg) 0%, #07101a 100%); color: var(--color-text); }
+
+/* Section spacing & visuals */
+section { padding-top: 4.5rem; padding-bottom: 4.5rem }
+.card { border-radius: 14px; }
+.project-card { transition: transform .28s ease, box-shadow .28s ease; }
+.project-card:hover { box-shadow: 0 18px 40px rgba(0,0,0,0.55) }
+.project-badge { font-size: 11px; padding: 6px 8px; border-radius: 999px; background: rgba(0,0,0,0.45); color: #fff }
+.collab-badge { background: linear-gradient(90deg,#ff7a7a,#ffde59); color: #130f0f; font-weight: 700 }
+
+/* custom styles for hero canvas */
+section { position: relative; overflow: hidden; }
+canvas { width: 100%; height: 100%; display: block; }
+
+/* Parallax decorative styles */
+.blur-3xl { filter: blur(56px); }
+
+/* footer heart backdrop tweaks */
+.footer-heart { filter: blur(36px); opacity: .12 }
+
+/* Ensure pinned hero content looks good on desktop/mobile */
+@media (min-width: 768px){
+	.hero-pin-title { font-size: 4rem; }
+}
