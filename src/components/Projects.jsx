@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useMemo } from 'react'
 import artist from '../data/artist'
 import news from '../data/news'
+import SocialFeed from './SocialFeed'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export default function Projects(){
+export default function Projects() {
   const containerRef = useRef(null)
 
-  useEffect(()=>{
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
     // Timeline animation
@@ -131,15 +132,15 @@ export default function Projects(){
 
                       {/* CTA Button */}
                       {item.link && (
-                        <a 
-                          href={item.link} 
-                          target="_blank" 
+                        <a
+                          href={item.link}
+                          target="_blank"
                           rel="noreferrer"
                           className="inline-flex items-center gap-2 bg-[var(--color-accent)] hover:bg-opacity-90 text-white font-semibold py-2 px-4 rounded-lg transition"
                         >
                           {item.source === 'spotify' ? '🎵 Ouvir' : '🔗 Acessar'}
                           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </a>
                       )}
@@ -158,7 +159,11 @@ export default function Projects(){
       </div>
 
       {/* Background decoration */}
+      {/* Background decoration */}
       <div className="pointer-events-none absolute -right-32 top-1/4 w-80 h-80 opacity-5 bg-gradient-to-br from-[var(--color-accent)] to-transparent rounded-full blur-3xl" />
+
+      {/* Instagram Integration Example */}
+      <SocialFeed />
     </section>
   )
 }

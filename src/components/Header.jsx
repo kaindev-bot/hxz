@@ -15,7 +15,6 @@ export default function Header() {
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           <Link to="/#discography" className="text-gray-300 hover:text-white transition text-sm">Discografia</Link>
-          <Link to="/#projects" className="text-gray-300 hover:text-white transition text-sm">Jornada</Link>
           <Link to="/fotos" className="text-gray-300 hover:text-white transition text-sm">Fotos</Link>
         </nav>
 
