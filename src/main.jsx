@@ -1,5 +1,7 @@
+
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import { HashRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
 import initSmoothScroll from './utils/smoothScroll'
@@ -7,7 +9,9 @@ import site from './config/site'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </React.StrictMode>
 )
 
@@ -18,11 +22,11 @@ if (typeof window !== 'undefined') {
   if (!isTouch && window.innerWidth >= 768) {
     import('./utils/smoothScroll').then(m => {
       try { m.default() } catch (e) { /* ignore init errors */ }
-    }).catch(()=>{})
+    }).catch(() => { })
   }
 }
 
 // apply theme preset from site config
-if(site.theme){
+if (site.theme) {
   document.documentElement.classList.add(`theme-${site.theme}`)
 }

@@ -1,12 +1,10 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import Discography from './components/Discography'
-import Projects from './components/Projects'
-import BottomPlayer from './components/BottomPlayer'
+import Home from './components/Home'
+import Fotos from './components/fotos'
 import CustomCursor from './components/CustomCursor'
 import PageTransition from './components/PageTransition'
-import ArtistFooter from './components/ArtistFooter'
 
 export default function App() {
   return (
@@ -14,25 +12,11 @@ export default function App() {
       <Header />
       <PageTransition />
       <CustomCursor />
-      <main className="pt-16 md:pt-20">
-        {/* Hero */}
-        <Hero />
-        
-        {/* Main Content */}
-        <div className="bg-black">
-          {/* Discography */}
-          <Discography />
-          
-          {/* Projects */}
-          <Projects />
-        </div>
-        
-        {/* Bottom Player */}
-        <BottomPlayer />
-        
-        {/* Footer */}
-        <ArtistFooter />
-      </main>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/fotos" element={<Fotos />} />
+      </Routes>
     </div>
   )
 }
