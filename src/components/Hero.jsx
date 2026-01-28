@@ -1,15 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { Environment } from '@react-three/drei'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import artist from '../data/artist'
-import CrownModel from './CrownModel'
 
 export default function Hero() {
   const containerRef = useRef()
-  const pointerRef = useRef({ x: 0, y: 0 })
-  const scrollProgressRef = useRef(0)
   const [hasMounted, setHasMounted] = useState(false)
 
   useEffect(() => {
@@ -24,23 +19,7 @@ export default function Hero() {
 
     setHasMounted(true)
 
-    // Handle pointer movement with throttling for crown interaction
-    let lastPointerUpdate = 0
-    function onPointerMove(e) {
-      const now = Date.now()
-      if (now - lastPointerUpdate < 16) return // ~60fps throttle
-      lastPointerUpdate = now
-
-      const x = (e.clientX / window.innerWidth) * 2 - 1
-      const y = (e.clientY / window.innerHeight) * 2 - 1
-      pointerRef.current.x = x
-      pointerRef.current.y = y
-    }
-
-    window.addEventListener('pointermove', onPointerMove, { passive: true })
-
     return () => {
-      window.removeEventListener('pointermove', onPointerMove)
       ScrollTrigger.getAll().forEach(t => t.kill())
     }
   }, [])
@@ -51,15 +30,15 @@ export default function Hero() {
       ref={containerRef}
       className="h-screen flex items-center justify-center relative overflow-hidden bg-black"
     >
-      {/* Background image - Normal brightness */}
-      <div
-        className="absolute inset-0 -z-50"
-        style={{
-          backgroundImage: 'url("hxz.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-        }}
-      />
+      {/* Background image - Desktop Only */}
+      <div className="absolute inset-0 z-0 hidden md:block">
+        <img
+          src="hxz.jpg"
+          alt="Artist Hero"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/80" />
+      </div>
 
       {/* Text content - Crystal clear */}
       <div className="relative z-10 text-center text-white px-4 md:px-6 max-w-4xl">
