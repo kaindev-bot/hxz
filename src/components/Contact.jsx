@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react' // deployment trigger: atualizacao da pagina
 import artist from '../data/artist'
 
-export default function Contact(){
+export default function Contact() {
   return (
     <section id="contact" className="py-32 px-6 bg-gradient-to-b from-black via-black/80 to-black">
       <div className="max-w-4xl mx-auto">
@@ -16,9 +16,9 @@ export default function Contact(){
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
           {/* Spotify */}
           {artist.socials?.spotify && (
-            <a 
-              href={artist.socials.spotify} 
-              target="_blank" 
+            <a
+              href={artist.socials.spotify}
+              target="_blank"
               rel="noreferrer"
               className="group flex flex-col items-center gap-3 transition transform hover:scale-110"
             >
@@ -33,9 +33,9 @@ export default function Contact(){
 
           {/* Instagram */}
           {artist.socials?.instagram && (
-            <a 
-              href={artist.socials.instagram} 
-              target="_blank" 
+            <a
+              href={artist.socials.instagram}
+              target="_blank"
               rel="noreferrer"
               className="group flex flex-col items-center gap-3 transition transform hover:scale-110"
             >
@@ -50,9 +50,9 @@ export default function Contact(){
 
           {/* YouTube */}
           {artist.socials?.youtube && (
-            <a 
-              href={artist.socials.youtube} 
-              target="_blank" 
+            <a
+              href={artist.socials.youtube}
+              target="_blank"
               rel="noreferrer"
               className="group flex flex-col items-center gap-3 transition transform hover:scale-110"
             >
@@ -67,9 +67,9 @@ export default function Contact(){
 
           {/* TikTok */}
           {artist.socials?.tiktok && (
-            <a 
-              href={artist.socials.tiktok} 
-              target="_blank" 
+            <a
+              href={artist.socials.tiktok}
+              target="_blank"
               rel="noreferrer"
               className="group flex flex-col items-center gap-3 transition transform hover:scale-110"
             >
