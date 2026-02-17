@@ -85,7 +85,7 @@ export default function Contact(){
 
         {/* Contact Info */}
         <div className="mt-24 text-center space-y-4">
-          <p className="text-gray-400">E-mail: <a href="mailto:silvahxz@email.com" className="text-[var(--color-accent)] hover:text-opacity-80 transition">silvahxz@email.com</a></p>
+          <p className="text-gray-400">E-mail: <a href="mailto:jrsilvah45@gmail.com" className="text-[var(--color-accent)] hover:text-opacity-80 transition">jrsilvah45@gmail.com</a></p>
           <p className="text-gray-400">Brasil</p>
         </div>
       </div>

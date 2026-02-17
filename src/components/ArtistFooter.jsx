@@ -107,7 +107,7 @@ export default function ArtistFooter(){
           <div>
             <h3 className="text-sm font-semibold text-white/70 mb-4 uppercase tracking-wider">Contato</h3>
             <p className="text-gray-400 text-sm">Para bookings e parcerias</p>
-            <p className="text-[var(--color-accent)] font-semibold mt-2">silvahxz@email.com</p>
+            <p className="text-[var(--color-accent)] font-semibold mt-2">jrsilvah45@gmail.com</p>
           </div>
         </div>
 
